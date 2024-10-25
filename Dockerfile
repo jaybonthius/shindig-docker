@@ -10,6 +10,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
         git \
         xvfb \
         sudo \
+        build-essential \
+        inotify-tools \
         && \
     npm install -g pnpm@9.10.0 && \
     apt-get clean && \
@@ -26,6 +28,7 @@ RUN useradd -ms /bin/bash vscode && \
     echo "vscode ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vscode
 
 # Install shindig package
+# TODO: not working in devcontainer
 RUN raco pkg install --auto --clone shindig https://github.com/jaybonthius/shindig.git
 
 # Switch to non-root user
