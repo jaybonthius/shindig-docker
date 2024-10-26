@@ -29,7 +29,7 @@ RUN useradd -ms /bin/bash vscode && \
 
 # Install shindig package
 # TODO: not working in devcontainer
-RUN raco pkg install --auto --clone shindig https://github.com/jaybonthius/shindig.git
+RUN raco pkg install --auto https://github.com/jaybonthius/shindig.git
 
 # Switch to non-root user
 USER vscode
