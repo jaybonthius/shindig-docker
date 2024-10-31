@@ -28,9 +28,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
 RUN useradd -ms /bin/bash vscode && \
     echo "vscode ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vscode
 
-# Install racket packages
-RUN raco pkg install --auto https://github.com/jaybonthius/shindig.git
-
 # Switch to non-root user
 USER vscode
 WORKDIR /home/vscode
